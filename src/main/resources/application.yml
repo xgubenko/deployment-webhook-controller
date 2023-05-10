@@ -1,0 +1,5 @@
+server:
+  port: ${SERVER_PORT:3333}
+script:
+  path: ${SCRIPT_PATH:/Users/asd/IdeaProjects/deployment-webhook-controller/test.sh}
+secret: ${SECRET:test123}
