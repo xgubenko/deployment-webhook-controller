@@ -32,7 +32,7 @@ class DeploymentWebhookController {
             val pb = ProcessBuilder(scriptPath)
             pb.start()
             logger.info("Deploy successful")
-            return ResponseEntity<String>(computed, HttpStatus.OK)
+            return ResponseEntity<String>(payload, HttpStatus.OK)
         } else {
             return ResponseEntity<String>(
                 computed,
