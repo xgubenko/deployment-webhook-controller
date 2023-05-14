@@ -21,10 +21,13 @@ class DeploymentWebhookController {
     lateinit var secret: String
 
     @PostMapping("/deploy")
-    fun test(@RequestHeader("X-Hub-Signature") signature: String, @RequestBody payload: String): ResponseEntity<String> {
+    fun test(
+        @RequestHeader("X-Hub-Signature") signature: String,
+        @RequestBody payload: String
+    ): ResponseEntity<String> {
 
         val computed = String.format("sha1=%s", HmacUtils.hmacSha1Hex(secret, payload))
-        if(payload.equals(computed)){
+        if (signature.equals(computed)) {
             logger.info("Deploy started")
             val pb = ProcessBuilder(scriptPath)
             pb.start()
