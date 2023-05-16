@@ -4,9 +4,8 @@ script:
   path: ${SCRIPT_PATH:/root/deploy.sh}
 repository:
   secret: ${REPOSITORY_SECRET:ABC123}
-  path: ${REPOSITORY_PATH:xgubenko/react-terminal-style}
-  branch: ${REPOSITORY_BRANCH:main}
-  users: ${REPOSITORY_USERS:xgubenko, test}
+  path: ${REPOSITORY_PATH:https://github.com/xgubenko/react-terminal-style}
+  users: ${REPOSITORY_USERS:xgubenko}
   headers:
     signature: ${REPOSITORY_HEADERS_SIGNATURE:X-Hub-Signature}
     event: ${REPOSITORY_HEADERS_EVENT:X-GitHub-Event}
