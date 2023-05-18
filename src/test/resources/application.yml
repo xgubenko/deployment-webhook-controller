@@ -1,0 +1,10 @@
+server:
+  port: ${SERVER_PORT:3333}
+webhook:
+  script-path: ${SCRIPT_PATH:/root/deploy.sh}
+  secret: ${REPOSITORY_SECRET:ABC123}
+  repository-path: ${REPOSITORY_PATH:https://github.com/xgubenko/react-terminal-style}
+  repository-users: ${REPOSITORY_USERS:xgubenko}
+  signature-header: ${REPOSITORY_HEADERS_SIGNATURE:X-Hub-Signature}
+  event-header: ${REPOSITORY_HEADERS_EVENT:X-GitHub-Event}
+  encoding: ${ENCODING_ALGORITHM:sha1}
