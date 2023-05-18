@@ -12,7 +12,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <properties>
@@ -50,7 +50,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -73,28 +72,9 @@
                     <maxmem>64m</maxmem>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
-<!--                <configuration>-->
-<!--                    <args>-->
-<!--                        <arg>-Xjsr305=strict</arg>-->
-<!--                    </args>-->
-<!--                    <compilerPlugins>-->
-<!--                        <plugin>spring</plugin>-->
-<!--                        <plugin>jpa</plugin>-->
-<!--                        <plugin>all-open</plugin>-->
-<!--                    </compilerPlugins>-->
-<!--                    <pluginOptions>-->
-<!--                        <option>all-open:annotation=jakarta.persistence.Entity</option>-->
-<!--                        <option>all-open:annotation=jakarta.persistence.Embeddable</option>-->
-<!--                        <option>all-open:annotation=jakarta.persistence.MappedSuperclass</option>-->
-<!--                    </pluginOptions>-->
-<!--                </configuration>-->
                 <dependencies>
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>

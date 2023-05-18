@@ -1,7 +1,7 @@
 server:
   port: ${SERVER_PORT:3333}
 webhook:
-  script-path: ${SCRIPT_PATH:/root/deploy.sh}
+  script-path: ${SCRIPT_PATH:src/test/resources/test.sh}
   secret: ${REPOSITORY_SECRET:ABC123}
   repository-path: ${REPOSITORY_PATH:https://github.com/xgubenko/react-terminal-style}
   repository-users: ${REPOSITORY_USERS:xgubenko}
