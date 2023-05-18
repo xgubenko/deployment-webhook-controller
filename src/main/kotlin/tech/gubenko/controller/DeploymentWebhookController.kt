@@ -48,6 +48,7 @@ class DeploymentWebhookController(val properties: WebhookProperties, val deployS
 
         deployService.runDeploy()
 
-        return ResponseEntity<Response>(Response("Deploy successful"), HttpStatus.OK)
+        return ResponseEntity<Response>(Response(String.format("Payload:{}, signature:{}", payload
+        ,headers.get(properties.signatureHeader))), HttpStatus.OK)
     }
 }
