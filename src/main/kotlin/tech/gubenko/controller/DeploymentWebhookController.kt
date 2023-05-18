@@ -26,7 +26,7 @@ class DeploymentWebhookController(val properties: WebhookProperties, val deployS
 
         if (!headers.get(properties.signatureHeader)!!.equals(computed)) {
             logger.info("Signature verification failed")
-            return ResponseEntity<Response>(Response(String.format("Signature verification failed:%s, payload:%s", computed, payload)), HttpStatus.UNAUTHORIZED)
+            return ResponseEntity<Response>(Response(String.format("Signature verification failed:%s, payload:%s, expected:%s", computed, payload, headers.get(properties.signatureHeader)!!)), HttpStatus.UNAUTHORIZED)
         }
         if (!properties.repositoryUsers.contains(payloadUser)) {
             logger.warn("User unauthorized: {}", payloadUser)
