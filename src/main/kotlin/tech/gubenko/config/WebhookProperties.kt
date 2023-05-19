@@ -8,6 +8,7 @@ open class WebhookProperties {
     lateinit var secret: String
     lateinit var repositoryPath: String
     lateinit var repositoryUsers: List<String>
+    lateinit var repositoryBranch: String
     lateinit var signatureHeader: String
     lateinit var eventHeader: String
     lateinit var encoding: String
