@@ -5,6 +5,7 @@ webhook:
   secret: ${REPOSITORY_SECRET:ABC123}
   repository-path: ${REPOSITORY_PATH:https://github.com/xgubenko/react-terminal-style}
   repository-users: ${REPOSITORY_USERS:xgubenko}
+  repository-branch: ${REPOSITORY_BRANCH:refs/heads/main}
   signature-header: ${REPOSITORY_HEADERS_SIGNATURE:X-Hub-Signature}
   event-header: ${REPOSITORY_HEADERS_EVENT:X-GitHub-Event}
   encoding: ${ENCODING_ALGORITHM:sha1}

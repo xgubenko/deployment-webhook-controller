@@ -22,6 +22,7 @@ class DeploymentWebhookController(val properties: WebhookProperties, val deployS
 
         val payloadUser = deployService.getPusherName(payload)
         val payloadRepository = deployService.getRepositoryUrl(payload)
+        val payloadBranch = deployService.getRepositoryBranch(payload)
         val computed = deployService.computeSignature(payload)
 
         if (!headers.get(properties.signatureHeader)!!.get(0).equals(computed)) {
@@ -42,6 +43,14 @@ class DeploymentWebhookController(val properties: WebhookProperties, val deployS
             logger.info("Repository with this origin will not be deployed: {}", payloadRepository)
             return ResponseEntity<Response>(
                 Response("Repository with this origin will not be deployed"),
+                HttpStatus.BAD_REQUEST
+            )
+        }
+
+        if (!properties.repositoryBranch.equals(payloadBranch)) {
+            logger.info("This branch will not be deployed: {}", payloadRepository)
+            return ResponseEntity<Response>(
+                Response("This branch will not be deployed"),
                 HttpStatus.BAD_REQUEST
             )
         }

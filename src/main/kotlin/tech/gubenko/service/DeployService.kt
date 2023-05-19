@@ -30,4 +30,9 @@ class DeployService(val properties: WebhookProperties) {
         val root = ObjectMapper().readTree(payload)
         return root.path("repository").path("html_url").textValue()
     }
+
+    fun getRepositoryBranch(payload: String): String {
+        val root = ObjectMapper().readTree(payload)
+        return root.path("ref").textValue()
+    }
 }
