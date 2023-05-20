@@ -1,0 +1,12 @@
+name: Webhook-Test
+
+on: [push, pull_request]
+
+jobs:
+  webhook-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run test
+      run: mvn package
+    
