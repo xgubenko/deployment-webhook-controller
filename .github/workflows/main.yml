@@ -1,6 +1,6 @@
 name: Webhook-Test
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   webhook-build:
@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-java@v3
       with:
-        distribution: 'temurin' # See 'Supported distributions' for available options
+        distribution: 'oracle'
         java-version: '17'
     - name: Run test
       run: mvn package
